@@ -11,7 +11,7 @@ import { AuthContext } from '@/context/AuthContext';
 import { Navigate } from 'react-router-dom';
 
 const Upload = () => {
-  const { auth, logout } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
     if(!auth.isSignedIn){
       return <Navigate to="/" />
     }
@@ -20,6 +20,7 @@ const Upload = () => {
   const [scoreResult, setScoreResult] = useState<{ score: number, message: string } | null>(null);
 
   const handleUploadSuccess = (result: { score: number, message: string }) => {
+    
     setScoreResult(result);
     setIsUploaded(true);
   };
@@ -63,7 +64,7 @@ const Upload = () => {
                   </div>
                 </div>
               ) : (
-                <UploadForm onSuccess={handleUploadSuccess} />
+                <UploadForm />
               )}
             </CardContent>
           </Card>
