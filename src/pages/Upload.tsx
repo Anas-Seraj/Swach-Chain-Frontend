@@ -33,7 +33,7 @@ const Upload = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header isLoggedIn={auth.isSignedIn} />
       <main className="flex-1 py-12">
         <div className="container max-w-3xl">
           <h1 className="text-3xl font-bold mb-6 text-center">
