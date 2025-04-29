@@ -13,6 +13,7 @@ import { Navigate } from 'react-router-dom';
 const Upload = () => {
   const { auth } = useContext(AuthContext);
     if(!auth.isSignedIn){
+      console.log("redirected to /");
       return <Navigate to="/" />
     }
 
